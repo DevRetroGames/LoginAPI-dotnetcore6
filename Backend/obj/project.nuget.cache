@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "JLQEURG59wo9CSPVdY0YFne1Tgp6Iputzu+zPpIdw2b3dWQXPy1Ro28TbF2COGn90uXoV4NWWaOrqiJYSY1QFg==",
+  "success": true,
+  "projectFilePath": "/mnt/4A1C70251C700E67/Proyectos/Api Rest/LoginAPI-dotnetcore6/Backend/Backend.csproj",
+  "expectedPackageFiles": [
+    "/home/dev/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "/home/dev/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/home/dev/.nuget/packages/swashbuckle.aspnetcore/6.5.0/swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "/home/dev/.nuget/packages/swashbuckle.aspnetcore.swagger/6.5.0/swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "/home/dev/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.5.0/swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "/home/dev/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.5.0/swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,43 @@
+# Binarios y archivos generados
+/bin/
+/obj/
+/*.dll
+/*.exe
+/*.pdb
+/*.log
+/*.zip
+/*.gz
+/*.7z
+/*.rar
+node_modules/
+
+# Carpeta de paquetes NuGet
+/packages/
+
+# Carpeta de registro y archivos de usuario local
+/appsettings.json
+/appsettings.Development.json
+/appsettings.Production.json
+/appsettings*.json
+*.user
+*.suo
+*.userprefs
+*.lock
+*.swp
+
+# Archivos de compilación
+*.sln.cache
+*.csproj.user
+*.suo
+*.user
+*.userosscache
+
+# Visual Studio Code
+.vscode/
+
+# Rider
+.idea/
+
+# Carpeta de registros de excepciones y archivos de despliegue
+/Logs/
+/binaries/

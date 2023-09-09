@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+
+  backend:
+    container_name: backend_dotnet-core-6
+    platform: linux/x86_64
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - mongo
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings:MongoDB=MongoDB:27017
+    networks:
+      net_interna:
+        aliases:
+          - dotnet-core-6_api-login_backend
+
+  mongo:
+    container_name: MongoDB
+    platform: linux/x86_64
+    restart: unless-stopped
+    image: mongo:latest
+    ports:
+      - "27018:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=contraseña
+      TZ: America/Santiago
+    volumes:
+      - './mongo-data:/data/db'
+    networks:
+      net_interna:
+        aliases:
+          - dotnet-core-6_api-login_mongo
+
+volumes:
+  mongo-data: {}
+
+networks:
+  net_interna:
+    name: dotnet-core-6_api-login
+    driver: bridge
+    ipam:
+      driver: default
