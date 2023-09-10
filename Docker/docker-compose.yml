@@ -1,46 +1,59 @@
-version: '3.8'
+version: '3.5'
 
 services:
 
   backend:
     container_name: backend_dotnet-core-6
-    platform: linux/x86_64
     build:
-      context: .
+      context: ../Backend
       dockerfile: Dockerfile
     ports:
-      - "80:80"
+      - '80:80'
     depends_on:
       - mongo
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ConnectionStrings:MongoDB=MongoDB:27017
+      - 'ConnectionStrings:MongoDB=Mongodb:27017'
     networks:
       net_interna:
         aliases:
           - dotnet-core-6_api-login_backend
-
+          
   mongo:
+    image: mongo:3.0
     container_name: MongoDB
-    platform: linux/x86_64
     restart: unless-stopped
-    image: mongo:latest
     ports:
-      - "27018:27017"
+      - '27017:27017'
     environment:
-      - MONGO_INITDB_ROOT_USERNAME=root
-      - MONGO_INITDB_ROOT_PASSWORD=contraseña
-      TZ: America/Santiago
-    volumes:
-      - './mongo-data:/data/db'
+      MONGO_INITDB_ROOT_USERNAME: user
+      MONGO_INITDB_ROOT_PASSWORD: pass
+    #volumes:
+      #- './mongo-data:/data/db'
     networks:
       net_interna:
         aliases:
           - dotnet-core-6_api-login_mongo
 
+  mongo-express:
+    image: mongo-express
+    container_name: MongoExpress
+    restart: unless-stopped
+    ports:
+      - '8082:8081'
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: user
+      ME_CONFIG_MONGODB_ADMINPASSWORD: pass
+      ME_CONFIG_MONGODB_SERVER: mongo
+      ME_CONFIG_MONGODB_URL: mongodb://user:pass@mongo:27017/
+    networks:
+      net_interna:
+        aliases:
+          - dotnet-core-6_api-login_mongoexpress
+          
 volumes:
   mongo-data: {}
-
+  
 networks:
   net_interna:
     name: dotnet-core-6_api-login

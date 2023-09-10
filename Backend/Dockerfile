@@ -1,15 +1,15 @@
 # Establece la imagen base de .NET Core para construir la aplicación
-FROM mcr.microsoft.com/dotnet/aspnet:6.0.413 AS base
+FROM mcr.microsoft.com/dotnet/nightly/sdk:6.0.413-alpine3.18-amd64 AS base
 WORKDIR /app
 EXPOSE 80
 
 # Establece la imagen base de .NET Core para compilar la aplicación
-FROM mcr.microsoft.com/dotnet/sdk:6.0.413 AS build
+FROM mcr.microsoft.com/dotnet/nightly/sdk:6.0.413-alpine3.18-amd64 AS build
 WORKDIR /src
 COPY ["Backend.csproj", "Backend/"]
 RUN dotnet restore "Backend/Backend.csproj"
-COPY . .
 WORKDIR "/src/Backend"
+COPY . .
 RUN dotnet build "Backend.csproj" -c Release -o /app/build
 
 FROM build AS publish

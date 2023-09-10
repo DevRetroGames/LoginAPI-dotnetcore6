@@ -442,11 +442,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/mnt/4A1C70251C700E67/Proyectos/Api Rest/LoginAPI-dotnetcore6/Backend/Backend.csproj",
+      "projectUniqueName": "/mnt/4A1C70251C700E67/Proyectos/Api Rest/Login dotnet core 6/LoginAPI-dotnetcore6/Backend/Backend.csproj",
       "projectName": "Backend",
-      "projectPath": "/mnt/4A1C70251C700E67/Proyectos/Api Rest/LoginAPI-dotnetcore6/Backend/Backend.csproj",
+      "projectPath": "/mnt/4A1C70251C700E67/Proyectos/Api Rest/Login dotnet core 6/LoginAPI-dotnetcore6/Backend/Backend.csproj",
       "packagesPath": "/home/dev/.nuget/packages/",
-      "outputPath": "/mnt/4A1C70251C700E67/Proyectos/Api Rest/LoginAPI-dotnetcore6/Backend/obj/",
+      "outputPath": "/mnt/4A1C70251C700E67/Proyectos/Api Rest/Login dotnet core 6/LoginAPI-dotnetcore6/Backend/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/dev/.nuget/NuGet/NuGet.Config"
