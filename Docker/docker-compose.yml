@@ -28,8 +28,8 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: user
       MONGO_INITDB_ROOT_PASSWORD: pass
-    #volumes:
-      #- './mongo-data:/data/db'
+    volumes:
+      - './mongo-data:/data/db'
     networks:
       net_interna:
         aliases:
