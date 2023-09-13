@@ -25,7 +25,7 @@ namespace Backend.Services
             return _users.Find(user => true).ToList();
         }
 
-        public User get(string id)
+        public User Get(string id)
         {
             return _users.Find(user => user.Id == id).FirstOrDefault();
         }

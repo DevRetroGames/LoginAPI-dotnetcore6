@@ -1,6 +1,25 @@
+using Backend.Models;
+using Backend.Services;
+using Microsoft.Extensions.Options;
+using MongoDB.Driver;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.Configure<UserStoreDatabaseSettings>(
+    builder.Configuration.GetSection(nameof(UserStoreDatabaseSettings))
+);
+
+builder.Services.AddSingleton<IUserStoreDatabaseSettings>(
+    sp => sp.GetRequiredService<IOptions<UserStoreDatabaseSettings>>().Value
+);
+
+builder.Services.AddSingleton<IMongoClient>(
+    s => new MongoClient(builder.Configuration.GetValue<string>("UserStoreDatabaseSettings:ConnectionStrings"))
+);
+
+builder.Services.AddScoped<IUserService, UserService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

@@ -20,7 +20,7 @@ services:
           - dotnet-core-6_api-login_backend
           
   mongo:
-    image: mongo:3.0
+    image: mongo:6.0
     container_name: MongoDB
     restart: unless-stopped
     ports:
